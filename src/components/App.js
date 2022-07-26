@@ -30,7 +30,9 @@ function App() {
             </div>
             <div
               className="preview-img js__profile-preview"
-              style='background-image: url("./assets/images/retrato-defecto.png");'
+              //style={{
+              //  backgroundImage: url("./assets/images/retrato-defecto.png"),
+              //}}
             >
               <img src="" alt="" />
             </div>
@@ -182,7 +184,7 @@ function App() {
                   </label>
                   <div
                     className="image_preview js__profile-image"
-                    style='background-image: url("");'
+                    // style={{ backgroundImage: url("") }}
                   ></div>
                 </div>
               </label>
