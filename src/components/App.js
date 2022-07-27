@@ -1,7 +1,19 @@
 import '../styles/App.scss';
 import logo from '../images/logo-footer.jpg';
+import { useState } from 'react';
 
 function App() {
+  const [classCollapsed, setClassCollapsed] = useState('collapsed');
+  const handleClickCollapsed = (ev) => {
+    // if (classCollapsed === 'collapsed') {
+    //   setClassCollapsed('');
+    // } else {
+    //   setClassCollapsed('collapsed');
+    // }
+    classCollapsed === 'collapsed'
+      ? setClassCollapsed('')
+      : setClassCollapsed('collapsed');
+  };
   return (
     <div>
       <header className="header-app">
@@ -70,13 +82,18 @@ function App() {
         </section>
         <form action="" className="form-container js_all_inputs">
           <fieldset>
-            <section className="section-form js_header_design">
+            <section
+              className="section-form js_header_design"
+              onClick={handleClickCollapsed}
+            >
               <h2 className="section-form-title">
                 <i className="fa-solid fa-object-ungroup"></i>diseña
               </h2>
               <i className="fa-solid fa-angle-up rotate js_angle_design"></i>
             </section>
-            <section className="design-colors js_content_design">
+            <section
+              className={`design-colors js_content_design ${classCollapsed}`}
+            >
               {/* Se ha quitado la clase collapsed */}
               <h3 className="colors-title">colores</h3>
               <div className="select-colors js_palette">
@@ -144,7 +161,10 @@ function App() {
             </section>
           </fieldset>
           <fieldset>
-            <section className="section-form js_header_data">
+            <section
+              className="section-form js_header_data"
+              onClick={handleClickCollapsed}
+            >
               <h2 className="section-form-title">
                 <i className="fa-solid fa-keyboard"></i>rellena
               </h2>
