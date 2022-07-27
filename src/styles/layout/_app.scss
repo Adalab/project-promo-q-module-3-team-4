@@ -1,0 +1,23 @@
+.main-app {
+  min-height: 80vh;
+  @media all and (min-width: 768px) {
+    background-color: $background_primary;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    height: 76vh;
+  }
+  @media all and (min-width: 1024px) {
+    grid-template-columns: 0.75fr 1.25fr;
+  }
+}
+
+.form-container {
+  padding-bottom: 30px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.submit-button-gray {
+  background-color: #d5d5d5;
+}

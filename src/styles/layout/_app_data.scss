@@ -1,0 +1,91 @@
+/*SECCIÓN DEL TÍTULO*/
+
+.data {
+  padding-top: 27px;
+  padding-left: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.data-title {
+  text-transform: uppercase;
+  font-family: $font_main;
+  font-weight: 700;
+  color: $color_neutro;
+  font-size: 1.4rem;
+}
+
+.fa-keyboard {
+  margin-right: 10px;
+  color: $pink;
+  font-size: 1.4rem;
+}
+
+/* FORMULARIO */
+
+.data-input-section {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 20px;
+  margin: 25px 30px;
+  gap: 20px;
+  border-bottom: solid 1px $background_border;
+
+  @media all and (min-width: 768px) {
+    max-width: 329px;
+  }
+  @media all and (min-width: 1024px) {
+    gap: 10px;
+    margin: 15px 30px;
+    padding-bottom: 0px;
+  }
+}
+
+.data-label {
+  font-family: $font_main;
+  color: $color_blue;
+  font-size: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+
+  & .data-input {
+    border: 2px $color_pink solid;
+    height: 30px;
+    border-radius: 15px;
+    @media all and (min-width: 1024px) {
+      height: 25px;
+    }
+  }
+}
+
+.image-input-div {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  & .image-input-label {
+    background-color: $blue;
+    padding: 10px;
+    width: 140px;
+    font-size: 14px;
+
+    font-family: $font_main;
+
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+
+    & .image-input {
+      display: none;
+    }
+  }
+  & .image_preview {
+    width: 30px;
+    height: 30px;
+    border: 2px $color_pink solid;
+    background-size: cover;
+    background-position: 50%;
+  }
+}

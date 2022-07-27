@@ -1,0 +1,41 @@
+.header-app {
+  width: 100vw;
+  min-height: 10vh;
+  display: flex;
+  align-items: center;
+  &__logo {
+    width: 160px;
+    height: 90px;
+    margin: 30px;
+    @media all and (min-width: 768px) {
+      width: 200px;
+      height: 120px;
+    }
+    @media all and (min-width: 1024px) {
+      width: 180px;
+      height: 90px;
+    }
+  }
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 17vh;
+  @media all and (min-width: 768px) {
+    padding-top: 4vh;
+  }
+  @media all and (min-width: 1024px) {
+    padding-top: 2vh;
+  }
+  &__logo {
+    width: 250px;
+    height: 200px;
+    
+    @media all and (min-width: 768px) {
+      width: 350px;
+      height: 300px;
+    }
+    
+  }
+}

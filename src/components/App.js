@@ -1,4 +1,5 @@
-import "../styles/App.scss";
+import '../styles/App.scss';
+import logo from '../images/logo-footer.jpg';
 
 function App() {
   return (
@@ -7,7 +8,7 @@ function App() {
         <a href="./index.html#" title="inicio">
           <img
             className="header-app__logo"
-            src="./assets/images/logo.jpg"
+            src={logo}
             alt="logo"
             title="logo"
           />
@@ -28,17 +29,13 @@ function App() {
                 Front-end developer
               </h3>
             </div>
-            <div
-              className="preview-img js__profile-preview"
-              //style={{
-              //  backgroundImage: url("./assets/images/retrato-defecto.png"),
-              //}}
-            >
+            <div className="preview-img js__profile-preview">
               <img src="" alt="" />
             </div>
             <div className="preview-icon-contact">
               <a
                 href="tel:"
+                rel="noreferrer"
                 target="_blank"
                 className="link-preview-icon js_preview_phone"
               >
@@ -46,6 +43,7 @@ function App() {
               </a>
               <a
                 href="mailto:"
+                rel="noreferrer"
                 target="_blank"
                 className="link-preview-icon js_preview_email"
               >
@@ -53,6 +51,7 @@ function App() {
               </a>
               <a
                 href="https://www.linkedin.com/in/"
+                rel="noreferrer"
                 target="_blank"
                 className="link-preview-icon js_preview_linkedin"
               >
@@ -60,6 +59,7 @@ function App() {
               </a>
               <a
                 href="https://github.com/"
+                rel="noreferrer"
                 target="_blank"
                 className="link-preview-icon js_preview_github"
               >
@@ -76,7 +76,8 @@ function App() {
               </h2>
               <i className="fa-solid fa-angle-up rotate js_angle_design"></i>
             </section>
-            <section className="design-colors js_content_design collapsed">
+            <section className="design-colors js_content_design">
+              {/* Se ha quitado la clase collapsed */}
               <h3 className="colors-title">colores</h3>
               <div className="select-colors js_palette">
                 <label htmlFor="color-box1" className="color-box-label">
@@ -149,7 +150,8 @@ function App() {
               </h2>
               <i className="fa-solid fa-angle-up rotate js_angle_data"></i>
             </section>
-            <section className="data-input-section js_content_data collapsed">
+            <section className="data-input-section js_content_data">
+              {/* Se ha quitado la clase collapsed */}
               <label htmlFor="name" className="data-label">
                 Nombre completo
                 <input
@@ -239,7 +241,8 @@ function App() {
               </h2>
               <i className="fa-solid fa-angle-up rotate js_angle_share"></i>
             </section>
-            <div className="create_button js_content_share collapsed">
+            <div className="create_button js_content_share">
+              {/* Se ha quitado la clase collapsed */}
               <button className="submit_button js_submit_button" type="submit">
                 <i className="fa fa-address-card" aria-hidden="true"></i> crear
                 tarjeta
@@ -247,14 +250,18 @@ function App() {
               <section className="font_success">
                 <p className="card_create js_message collapsed"></p>
                 <a
-                  href=""
-                  className="card_link js_url collapsed"
+                  className="card_link js_url"
+                  // se ha quitado la clase collapsed
+                  href="true"
                   target="_blank"
-                ></a>
+                >
+                  Enlace perdido eh!!!!
+                </a>
 
                 <a
-                  className="button_twiter js_button_twitter collapsed"
-                  href=""
+                  className="button_twiter js_button_twitter"
+                  // Se ha quitado la clase collapsed
+                  href="true"
                   target="_blank"
                 >
                   <i className="fa-brands fa-twitter"></i>
@@ -273,10 +280,10 @@ function App() {
         </div>
         <div className="footer__logo">
           <a href="./index.html#">
-            {" "}
+            {' '}
             <img
               className="footer__logo--img"
-              src="./assets/images/logo-footer.jpg"
+              src={logo}
               alt="logo"
               title="logo"
             />

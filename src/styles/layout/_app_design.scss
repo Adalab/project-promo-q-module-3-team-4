@@ -1,0 +1,127 @@
+/*SECCIÓN DEL TÍTULO*/
+
+.section-form {
+  padding-top: 27px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: solid 1px $color_blue;
+  padding-bottom: 7px;
+}
+
+.fa-object-ungroup {
+  margin-right: 10px;
+  color: $pink;
+  font-size: 1.4rem;
+}
+
+.fa-angle-up {
+  margin-right: 20px;
+  color: $pink;
+  font-size: 1.8rem;
+}
+
+.section-form-title {
+  text-transform: uppercase;
+  font-family: $font_main;
+  font-weight: 700;
+  color: $font_color_primary;
+  font-size: 1.4rem;
+}
+
+/*SELECCIÓN DE COLORES*/
+
+.design-colors {
+  margin: 22px 20px 30px 39px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.design-colors .select-colors {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.design-colors .colors-title {
+  text-transform: uppercase;
+  font-family: $font_main;
+  font-size: 1.4rem;
+  color: $color_blue;
+}
+
+.color-box-label {
+  display: flex;
+
+  align-items: center;
+}
+
+.color-box-input {
+  margin-right: 10px;
+  height: 17px;
+}
+
+.design-colors .color-div {
+  height: 25px;
+  width: 30px;
+}
+
+/* COLORES DE LAS CAJAS */
+.design-colors .one {
+  background-color: #114e4e;
+}
+
+.design-colors .two {
+  background-color: #438792;
+}
+
+.design-colors .three {
+  background-color: #a2deaf;
+}
+
+.design-colors .four {
+  background-color: #420101;
+}
+
+.design-colors .five {
+  background-color: #bd1010;
+}
+
+.design-colors .six {
+  background-color: #e95626;
+}
+
+.design-colors .seven {
+  background-color: #3e5b65;
+}
+
+.design-colors .eight {
+  background-color: #eab052;
+}
+
+.design-colors .nine {
+  background-color: #a0c0cf;
+}
+
+.design-colors .ten {
+  background-color: #b0008a;
+}
+
+.design-colors .eleven {
+  background-color: #b169c5;
+}
+
+.design-colors .twelve {
+  background-color: #0b8dc9;
+}
+
+.design-colors .thirteen {
+  background-color: #21d0bb;
+}
+
+.design-colors .fourteen {
+  background-color: #f637dd;
+}
+
+.design-colors .fifteen {
+  background-color: #ffef3c;
+}
