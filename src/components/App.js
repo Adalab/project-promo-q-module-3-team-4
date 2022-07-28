@@ -4,6 +4,23 @@ import { useState } from 'react';
 
 function App() {
   const [classCollapsed, setClassCollapsed] = useState('collapsed');
+  const [dataCard, setDataCard] = useState({
+    palette: "1",
+    name: "",
+    job: "",
+    phone: "",
+    email: "",
+    linkedin: "",
+    github: "",
+    photo: "",
+
+  });
+
+  const handleInput = (ev) => {
+    const inputName = ev.currentTarget.name;
+    const inputValue = ev.currentTarget.value;
+    setDataCard({ ...dataCard, [inputName]: inputValue })
+  }
   const handleClickCollapsed = (ev) => {
     // if (classCollapsed === 'collapsed') {
     //   setClassCollapsed('');
@@ -13,6 +30,7 @@ function App() {
     classCollapsed === 'collapsed'
       ? setClassCollapsed('')
       : setClassCollapsed('collapsed');
+
   };
   return (
     <div>
@@ -104,6 +122,7 @@ function App() {
                     id="color-box1"
                     className="color-box-input js_palette1"
                     value="1"
+                    onChange={handleInput}
                   />
                   <div className="color-div one"></div>
                   <div className="color-div two"></div>
@@ -116,6 +135,7 @@ function App() {
                     id="color-box2"
                     className="color-box-input js_palette2"
                     value="2"
+                    onChange={handleInput}
                   />
                   <div className="color-div four"></div>
                   <div className="color-div five"></div>
@@ -128,6 +148,7 @@ function App() {
                     id="color-box3"
                     className="color-box-input js_palette3"
                     value="3"
+                    onChange={handleInput}
                   />
                   <div className="color-div seven"></div>
                   <div className="color-div eight"></div>
@@ -140,6 +161,7 @@ function App() {
                     id="color-box4"
                     className="color-box-input js_palette4"
                     value="4"
+                    onChange={handleInput}
                   />
                   <div className="color-div ten"></div>
                   <div className="color-div eleven"></div>
@@ -152,6 +174,7 @@ function App() {
                     id="color-box5"
                     className="color-box-input js_palette5"
                     value="5"
+                    onChange={handleInput}
                   />
                   <div className="color-div thirteen"></div>
                   <div className="color-div fourteen"></div>
@@ -180,6 +203,8 @@ function App() {
                   id="name"
                   className="data-input js_name_input"
                   placeholder="Ej: Sally Jill"
+                  onChange={handleInput}
+                  value={dataCard.name}
                 />
               </label>
               <label htmlFor="job" className="data-label">
@@ -190,6 +215,8 @@ function App() {
                   id="job"
                   className="data-input js_job_input"
                   placeholder="Ej: Front-end unicorn"
+                  onChange={handleInput}
+                  value={dataCard.job}
                 />
               </label>
               <label htmlFor="profile-pic" className="data-label">
@@ -202,11 +229,13 @@ function App() {
                       id="profile-pic"
                       className="image-input js__profile-upload-btn"
                       name="photo"
+                      onChange={handleInput}
+                      value={dataCard.photo}
                     />
                   </label>
                   <div
                     className="image_preview js__profile-image"
-                    // style={{ backgroundImage: url("") }}
+                  // style={{ backgroundImage: url("") }}
                   ></div>
                 </div>
               </label>
@@ -219,6 +248,8 @@ function App() {
                   id="email"
                   className="data-input js_email_input"
                   placeholder="Ej: Sally-hill@gmail.com"
+                  onChange={handleInput}
+                  value={dataCard.email}
                 />
               </label>
               <label htmlFor="phone" className="data-label">
@@ -230,6 +261,8 @@ function App() {
                   className="data-input js_phone_input"
                   placeholder="Ej: 555-55-55-55"
                   pattern="[0-9]{9}"
+                  onChange={handleInput}
+                  value={dataCard.phone}
                 />
               </label>
               <label htmlFor="linkedin" className="data-label">
@@ -240,6 +273,8 @@ function App() {
                   id="linkedin"
                   className="data-input js_linkedin_input"
                   placeholder="Ej: linkedin.com/in/sally.hill"
+                  onChange={handleInput}
+                  value={dataCard.linkedin}
                 />
               </label>
               <label htmlFor="github" className="data-label ">
@@ -250,6 +285,8 @@ function App() {
                   id="github"
                   className="data-input js_github_input"
                   placeholder="Ej:@sally-hill"
+                  onChange={handleInput}
+                  value={dataCard.github}
                 />
               </label>
             </section>
