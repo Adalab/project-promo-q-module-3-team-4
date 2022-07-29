@@ -18,14 +18,26 @@ function App() {
   const handleInput = (ev) => {
     const inputName = ev.currentTarget.name;
     const inputValue = ev.currentTarget.value;
-    const newFile = new FileReader();
+    
     setDataCard({ ...dataCard, [inputName]: inputValue });
+
     if (inputName === "photo") {
-      const myFile = ev.currentTarget.files[0];
+      // const fr = new FileReader();
+      // const myFile = ev.currentTarget.files[0];
       // fr.addEventListener("load", writeImage);
-      newFile.readAsDataURL(myFile);
-      setImageUrl(newFile.result);
+      // fr.readAsDataURL(myFile);
+      // setImageUrl(fr.result);
+      // console.log(fr.result)
+
+      const file = ev.currentTarget.files[0];
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = function (event) {
+          const content = event.target.result;
+          setImageUrl(content)
+        }
     }
+
   };
   const handleReset = (ev) => {
     ev.preventDefault();
@@ -50,6 +62,7 @@ function App() {
       ? setClassCollapsed("")
       : setClassCollapsed("collapsed");
   };
+  
   return (
     <div>
       <header className="header-app">
@@ -79,8 +92,8 @@ function App() {
                 {dataCard.job || "Front-end developer"}
               </h3>
             </div>
-            <div className="preview-img js__profile-preview">
-              <img src="" alt="" />
+            <div className="preview-img js__profile-preview" style={{ backgroundImage: `url(${imageUrl})`}}>
+              {/* <img src={imageUrl} alt="" /> */}
             </div>
             <div className="preview-icon-contact">
               <a
@@ -260,7 +273,7 @@ function App() {
                   </label>
                   <div
                     className="image_preview js__profile-image"
-                    // style={{ backgroundImage: url("") }}
+                     style={{ backgroundImage: `url(${imageUrl})`}}
                   ></div>
                 </div>
               </label>
