@@ -4,6 +4,7 @@ import { useState } from "react";
 
 function App() {
   const [classCollapsed, setClassCollapsed] = useState("collapsed");
+  // const [imageUrl, setImageUrl] = useState('../images/retrato-defecto.png');
   const [dataCard, setDataCard] = useState({
     palette: "1",
     name: "",
@@ -12,9 +13,10 @@ function App() {
     email: "",
     linkedin: "",
     github: "",
-    photo: "",
+    photo: "../images/default.png"
   });
-  const [imageUrl, setImageUrl] = useState("../images/retrato-defecto.png");
+
+ 
   const handleInput = (ev) => {
     const inputName = ev.currentTarget.name;
     const inputValue = ev.currentTarget.value;
@@ -22,22 +24,16 @@ function App() {
     setDataCard({ ...dataCard, [inputName]: inputValue });
 
     if (inputName === "photo") {
-      // const fr = new FileReader();
-      // const myFile = ev.currentTarget.files[0];
-      // fr.addEventListener("load", writeImage);
-      // fr.readAsDataURL(myFile);
-      // setImageUrl(fr.result);
-      // console.log(fr.result)
-
       const file = ev.currentTarget.files[0];
       const reader = new FileReader();
       reader.readAsDataURL(file);
       reader.onload = function (event) {
         const content = event.target.result;
-        setImageUrl(content);
+        setDataCard({...dataCard, [inputName]: content});
       };
     }
   };
+
   const handleReset = (ev) => {
     ev.preventDefault();
     setDataCard({
@@ -48,7 +44,7 @@ function App() {
       email: "",
       linkedin: "",
       github: "",
-      photo: "",
+      photo: "../images/default.png"
     });
   };
   const handleClickCollapsed = (ev) => {
@@ -93,7 +89,7 @@ function App() {
             </div>
             <div
               className="preview-img js__profile-preview"
-              style={{ backgroundImage: `url(${imageUrl})` }}
+              style={{ backgroundImage: `url(${dataCard.photo})` }}
             >
               {/* <img src={imageUrl} alt="" /> */}
             </div>
@@ -270,12 +266,13 @@ function App() {
                       className="image-input js__profile-upload-btn"
                       name="photo"
                       onChange={handleInput}
-                      value={dataCard.photo}
+                      // value={dataCard.photo}
                     />
                   </label>
                   <div
                     className="image_preview js__profile-image"
-                    style={{ backgroundImage: `url(${imageUrl})` }}
+                    style={{ backgroundImage: `url(${dataCard.photo
+                    })` }}
                   ></div>
                 </div>
               </label>
