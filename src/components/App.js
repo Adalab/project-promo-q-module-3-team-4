@@ -1,8 +1,12 @@
 import "../styles/App.scss";
 import logo from "../images/logo-footer.jpg";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import sendToApi from "../services2/api";
 
 function App() {
+  //////////////////
+  const [preview, setPreview] = useState("");
+  /////////////////
   const [classCollapsed, setClassCollapsed] = useState("collapsed");
   // const [imageUrl, setImageUrl] = useState('../images/retrato-defecto.png');
   const [dataCard, setDataCard] = useState({
@@ -57,7 +61,15 @@ function App() {
       ? setClassCollapsed("")
       : setClassCollapsed("collapsed");
   };
+  ///////////////////////
 
+  useEffect(() => {
+    sendToApi(dataCard).then((response) => {
+      setPreview(response);
+    });
+  }, [dataCard]);
+
+  ////////////////////////////
   return (
     <div>
       <header className="header-app">
@@ -349,7 +361,7 @@ function App() {
                   href="true"
                   target="_blank"
                 >
-                  Enlace perdido eh!!!!
+                  {preview}
                 </a>
 
                 <a
