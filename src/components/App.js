@@ -151,7 +151,7 @@ function App() {
           <fieldset>
             <section
               className="section-form js_header_design"
-              // onClick={handleClickCollapsed}
+            // onClick={handleClickCollapsed}
             >
               <h2 className="section-form-title">
                 <i className="fa-solid fa-object-ungroup"></i>diseña
@@ -238,7 +238,7 @@ function App() {
           <fieldset>
             <section
               className="section-form js_header_data"
-              // onClick={handleClickCollapsed}
+            // onClick={handleClickCollapsed}
             >
               <h2 className="section-form-title">
                 <i className="fa-solid fa-keyboard"></i>rellena
@@ -282,7 +282,7 @@ function App() {
                       className="image-input js__profile-upload-btn"
                       name="photo"
                       onChange={handleInput}
-                      // value={dataCard.photo}
+                    // value={dataCard.photo}
                     />
                   </label>
                   <div
@@ -385,24 +385,7 @@ function App() {
           </fieldset>
         </form>
       </main>
-      <footer className="footer">
-        <div className="footer__text">
-          <p>
-            Monday haters <small>©2022</small>
-          </p>
-        </div>
-        <div className="footer__logo">
-          <a href="./index.html#">
-            {' '}
-            <img
-              className="footer__logo--img"
-              src={logo}
-              alt="logo"
-              title="logo"
-            />
-          </a>
-        </div>
-      </footer>
+
       <script src="./assets/js/main.js"></script>
     </div>
   );
