@@ -14,11 +14,11 @@ function App() {
     github: "",
     photo: "",
   });
-  const [imageUrl, setImageUrl] = useState("");
+  const [imageUrl, setImageUrl] = useState("../images/retrato-defecto.png");
   const handleInput = (ev) => {
     const inputName = ev.currentTarget.name;
     const inputValue = ev.currentTarget.value;
-    
+
     setDataCard({ ...dataCard, [inputName]: inputValue });
 
     if (inputName === "photo") {
@@ -33,11 +33,10 @@ function App() {
       const reader = new FileReader();
       reader.readAsDataURL(file);
       reader.onload = function (event) {
-          const content = event.target.result;
-          setImageUrl(content)
-        }
+        const content = event.target.result;
+        setImageUrl(content);
+      };
     }
-
   };
   const handleReset = (ev) => {
     ev.preventDefault();
@@ -62,7 +61,7 @@ function App() {
       ? setClassCollapsed("")
       : setClassCollapsed("collapsed");
   };
-  
+
   return (
     <div>
       <header className="header-app">
@@ -92,7 +91,10 @@ function App() {
                 {dataCard.job || "Front-end developer"}
               </h3>
             </div>
-            <div className="preview-img js__profile-preview" style={{ backgroundImage: `url(${imageUrl})`}}>
+            <div
+              className="preview-img js__profile-preview"
+              style={{ backgroundImage: `url(${imageUrl})` }}
+            >
               {/* <img src={imageUrl} alt="" /> */}
             </div>
             <div className="preview-icon-contact">
@@ -273,7 +275,7 @@ function App() {
                   </label>
                   <div
                     className="image_preview js__profile-image"
-                     style={{ backgroundImage: `url(${imageUrl})`}}
+                    style={{ backgroundImage: `url(${imageUrl})` }}
                   ></div>
                 </div>
               </label>
