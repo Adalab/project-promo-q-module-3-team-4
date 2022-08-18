@@ -39,6 +39,9 @@ function App() {
   };
   const handleCreateCard = (ev) => {
     ev.preventDefault();
+    sendToApi(dataCard).then((response) => {
+      setPreview(response);
+    });
     ls.set('dataLS', dataCard);
   };
 
@@ -67,11 +70,11 @@ function App() {
   //     : setClassCollapsed('collapsed');
   // };
 
-  useEffect(() => {
-    sendToApi(dataCard).then((response) => {
-      setPreview(response);
-    });
-  }, [dataCard]);
+  // useEffect(() => {
+  //   sendToApi(dataCard).then((response) => {
+  //     setPreview(response);
+  //   });
+  // }, [dataCard]);
 
   return (
     <div>
