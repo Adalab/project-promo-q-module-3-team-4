@@ -51,6 +51,7 @@ function App() {
       photo: "../images/default.png"
     });
   };
+  
   const handleClickCollapsed = (ev) => {
     // if (classCollapsed === 'collapsed') {
     //   setClassCollapsed('');
