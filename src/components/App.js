@@ -29,7 +29,7 @@ function App() {
       email: "",
       linkedin: "",
       github: "",
-      photo: "../images/default.png"
+      photo: "images/default.png"
     }));
 
   
@@ -69,7 +69,7 @@ function App() {
       email: '',
       linkedin: '',
       github: '',
-      photo: '../images/default.png',
+      photo: 'images/default.png',
     });
     ls.set('dataLS', {});
   };
