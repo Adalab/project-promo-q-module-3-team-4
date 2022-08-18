@@ -1,27 +1,19 @@
-import "../styles/App.scss";
-import logo from "../images/logo-footer.jpg";
-import { useState } from "react";
+import '../styles/App.scss';
+import logo from '../images/logo-footer.jpg';
+import { useState } from 'react';
+import ls from '../services/localStorage';
 
 function App() {
-  const [classCollapsed, setClassCollapsed] = useState("collapsed");
-  const [dataCard, setDataCard] = useState({
-    palette: "1",
-    name: "",
-    job: "",
-    phone: "",
-    email: "",
-    linkedin: "",
-    github: "",
-    photo: "",
-  });
-  const [imageUrl, setImageUrl] = useState("../images/retrato-defecto.png");
+  const [classCollapsed, setClassCollapsed] = useState('collapsed');
+  const [dataCard, setDataCard] = useState(ls.get('dataLS', {}));
+  const [imageUrl, setImageUrl] = useState('../images/retrato-defecto.png');
   const handleInput = (ev) => {
     const inputName = ev.currentTarget.name;
     const inputValue = ev.currentTarget.value;
 
     setDataCard({ ...dataCard, [inputName]: inputValue });
 
-    if (inputName === "photo") {
+    if (inputName === 'photo') {
       // const fr = new FileReader();
       // const myFile = ev.currentTarget.files[0];
       // fr.addEventListener("load", writeImage);
@@ -37,19 +29,25 @@ function App() {
         setImageUrl(content);
       };
     }
+    // ls.set('dataLS', dataCard);
+  };
+  const handleCreateCard = (ev) => {
+    ev.preventDefault();
+    ls.set('dataLS', dataCard);
   };
   const handleReset = (ev) => {
     ev.preventDefault();
     setDataCard({
-      palette: "1",
-      name: "",
-      job: "",
-      phone: "",
-      email: "",
-      linkedin: "",
-      github: "",
-      photo: "",
+      palette: '1',
+      name: '',
+      job: '',
+      phone: '',
+      email: '',
+      linkedin: '',
+      github: '',
+      photo: '',
     });
+    ls.set('dataLS', {});
   };
   const handleClickCollapsed = (ev) => {
     // if (classCollapsed === 'collapsed') {
@@ -57,9 +55,9 @@ function App() {
     // } else {
     //   setClassCollapsed('collapsed');
     // }
-    classCollapsed === "collapsed"
-      ? setClassCollapsed("")
-      : setClassCollapsed("collapsed");
+    classCollapsed === 'collapsed'
+      ? setClassCollapsed('')
+      : setClassCollapsed('collapsed');
   };
 
   return (
@@ -85,10 +83,10 @@ function App() {
           <div className="preview-data js_preview_palette palette-1">
             <div className="preview-container-title js_preview_container">
               <h2 className="preview-name js_preview_name">
-                {dataCard.name || "Nombre y apellidos"}
+                {dataCard.name || 'Nombre y apellidos'}
               </h2>
               <h3 className="preview-job js_preview_job">
-                {dataCard.job || "Front-end developer"}
+                {dataCard.job || 'Front-end developer'}
               </h3>
             </div>
             <div
@@ -158,7 +156,7 @@ function App() {
                     className="color-box-input js_palette1"
                     value="1"
                     onChange={handleInput}
-                    checked={dataCard.palette === "1"}
+                    checked={dataCard.palette === '1'}
                   />
                   <div className="color-div one"></div>
                   <div className="color-div two"></div>
@@ -172,7 +170,7 @@ function App() {
                     className="color-box-input js_palette2"
                     value="2"
                     onChange={handleInput}
-                    checked={dataCard.palette === "2"}
+                    checked={dataCard.palette === '2'}
                   />
                   <div className="color-div four"></div>
                   <div className="color-div five"></div>
@@ -186,7 +184,7 @@ function App() {
                     className="color-box-input js_palette3"
                     value="3"
                     onChange={handleInput}
-                    checked={dataCard.palette === "3"}
+                    checked={dataCard.palette === '3'}
                   />
                   <div className="color-div seven"></div>
                   <div className="color-div eight"></div>
@@ -200,7 +198,7 @@ function App() {
                     className="color-box-input js_palette4"
                     value="4"
                     onChange={handleInput}
-                    checked={dataCard.palette === "4"}
+                    checked={dataCard.palette === '4'}
                   />
                   <div className="color-div ten"></div>
                   <div className="color-div eleven"></div>
@@ -214,7 +212,7 @@ function App() {
                     className="color-box-input js_palette5"
                     value="5"
                     onChange={handleInput}
-                    checked={dataCard.palette === "5"}
+                    checked={dataCard.palette === '5'}
                   />
                   <div className="color-div thirteen"></div>
                   <div className="color-div fourteen"></div>
@@ -340,7 +338,11 @@ function App() {
             </section>
             <div className="create_button js_content_share">
               {/* Se ha quitado la clase collapsed */}
-              <button className="submit_button js_submit_button" type="submit">
+              <button
+                className="submit_button js_submit_button"
+                type="submit"
+                onClick={handleCreateCard}
+              >
                 <i className="fa fa-address-card" aria-hidden="true"></i> crear
                 tarjeta
               </button>
@@ -377,7 +379,7 @@ function App() {
         </div>
         <div className="footer__logo">
           <a href="./index.html#">
-            {" "}
+            {' '}
             <img
               className="footer__logo--img"
               src={logo}
