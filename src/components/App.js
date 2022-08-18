@@ -1,6 +1,6 @@
 import '../styles/App.scss';
 import logo from '../images/logo-footer.jpg';
-import { useState, useEffect } from 'react';
+import { useState} from 'react';
 import sendToApi from '../services2/api';
 import ls from '../services/localStorage';
 
