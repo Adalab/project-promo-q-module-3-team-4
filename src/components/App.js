@@ -29,7 +29,7 @@ function App() {
         setImageUrl(content);
       };
     }
-    // ls.set('dataLS', dataCard);
+    ls.set('dataLS', dataCard);
   };
   const handleCreateCard = (ev) => {
     ev.preventDefault();
