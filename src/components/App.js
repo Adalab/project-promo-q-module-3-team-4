@@ -1,6 +1,6 @@
 import '../styles/App.scss';
 import logo from '../images/logo-footer.jpg';
-import { useState} from 'react';
+import { useState, useEffect } from 'react';
 import sendToApi from '../services2/api';
 import ls from '../services/localStorage';
 
@@ -48,15 +48,20 @@ function App() {
         setDataCard({ ...dataCard, [inputName]: content });
       };
     }
-    ls.set('dataLS', dataCard);
+    // ls.set('dataLS', dataCard);
   };
+
+  useEffect(() => {
+    ls.set('dataLS', dataCard);
+  }, [dataCard]);
+
 
   const handleCreateCard = (ev) => {
     ev.preventDefault();
     sendToApi(dataCard).then((response) => {
       setPreview(response);
     });
-    ls.set('dataLS', dataCard);
+    // ls.set('dataLS', dataCard);
   };
 
   const handleReset = (ev) => {
@@ -71,7 +76,7 @@ function App() {
       github: '',
       photo: 'images/default.png',
     });
-    ls.set('dataLS', {});
+    // ls.set('dataLS', {});
   };
 
   // const handleClickCollapsed = (ev) => {
