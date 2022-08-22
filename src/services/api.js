@@ -11,7 +11,13 @@ const sendToApi = (data) => {
     .then(
       (serverResp) => {
         console.log(serverResp);
-        return serverResp.cardURL;
+        const result = {
+          url: serverResp.cardURL,
+          success: serverResp.success
+        }
+        console.log(result);
+
+        return result;
       }
 
       /*   if (serverResp.success) {
