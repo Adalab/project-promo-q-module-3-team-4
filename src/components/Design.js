@@ -4,13 +4,14 @@ const Design = (props) => {
         <fieldset>
             <section
                 className="section-form js_header_design"
-            // onClick={handleClickCollapsed}
+                onClick={props.handleCollapsables}
             >
                 <h2 className="section-form-title">
                     <i className="fa-solid fa-object-ungroup"></i>diseña
                 </h2>
                 <i className="fa-solid fa-angle-up rotate js_angle_design"></i>
             </section>
+
             <section className={`design-colors js_content_design`}>
                 {/* Se ha quitado la clase collapsed */}
                 <h3 className="colors-title">colores</h3>

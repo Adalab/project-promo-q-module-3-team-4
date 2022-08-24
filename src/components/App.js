@@ -1,7 +1,7 @@
 import '../styles/App.scss';
 import { useState, useEffect } from 'react';
 import ls from '../services/localStorage';
-import {Routes, Route, Link} from 'react-router-dom';
+import {Routes, Route} from 'react-router-dom';
 import Header from './Header';
 import logoGif from '../images/logo.gif';
 

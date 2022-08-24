@@ -2,9 +2,13 @@ import Design from './Design';
 import sendToApi from '../services/api';
 import Fill from './Fill';
 import Share from './Share';
+// import { useState } from 'react';
 
 
 const Form = (props) => {
+  // const [isCollapsed, setIsCollapsed] = useState(true);
+  // const [classCollapsed, setClassCollapsed] = useState('');
+
   const handleCreateCard = (ev) => {
     ev.preventDefault();
     sendToApi(props.dataCard).then((response) => {
@@ -28,8 +32,9 @@ const Form = (props) => {
     }
   };
 
-  const 
+  // const handleCollapsables = () => {
 
+  // }
 
   return (
     <form action="" className="form-container js_all_inputs">
