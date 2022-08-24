@@ -1,10 +1,9 @@
 import '../styles/App.scss';
 import { useState, useEffect } from 'react';
 import ls from '../services/localStorage';
-import {Routes, Route} from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Header from './Header';
 import logoGif from '../images/logo.gif';
-
 
 import Card from './Card';
 import Landing from './Landing';
@@ -81,18 +80,32 @@ function App() {
   return (
     <div>
       <Routes>
-        <Route path="/" element={
-        <>
-          <Header className="header" logo={logoGif}/>
-          <Landing/>
-        </>
-        }/>
+        <Route
+          path="/"
+          element={
+            <>
+              <Header className="header" logo={logoGif} cImg="header__logo" />
+              <Landing />
+            </>
+          }
+        />
 
-        <Route path="/card" element={<Card updateDataCard={updateDataCard} dataCard={dataCard} updatePreview={updatePreview} preview={preview} className="header-app"/>}/>
-
+        <Route
+          path="/card"
+          element={
+            <Card
+              updateDataCard={updateDataCard}
+              dataCard={dataCard}
+              updatePreview={updatePreview}
+              preview={preview}
+              className="header-app"
+              cImg="header-app__logo"
+            />
+          }
+        />
       </Routes>
-      
-      <Footer/>
+
+      <Footer />
       {/* <script src="./assets/js/main.js"></script> */}
     </div>
   );

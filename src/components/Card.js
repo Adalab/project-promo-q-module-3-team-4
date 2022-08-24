@@ -1,13 +1,17 @@
 import Header from './Header';
 import CardPreview from './CardPreview';
-import logo from '../images/logo.jpg'
+import logo from '../images/logo.jpg';
 import Form from './Form';
 
 const Card = (props) => {
-    return <>
-           <Header logo={logo} className={props.className}/>
+  return (
+    <>
+      <Header logo={logo} className={props.className} cImg={props.cImg} />
       <main className="main-app">
-        <CardPreview setDataCard={props.updateDataCard} dataCard={props.dataCard} />
+        <CardPreview
+          setDataCard={props.updateDataCard}
+          dataCard={props.dataCard}
+        />
         <Form
           updateDataCard={props.updateDataCard}
           updatePreview={props.updatePreview}
@@ -16,6 +20,7 @@ const Card = (props) => {
         />
       </main>
     </>
+  );
 };
 
 export default Card;
