@@ -1,12 +1,14 @@
 import '../styles/App.scss';
-import logo from '../images/logo-footer.jpg';
 import { useState, useEffect } from 'react';
-
 import ls from '../services/localStorage';
+import {Routes, Route, Link} from 'react-router-dom';
 import Header from './Header';
-import CardPreview from './CardPreview';
+import logoGif from '../images/logo.gif';
 
-import Form from './Form';
+
+import Card from './Card';
+import Landing from './Landing';
+import Footer from './Footer';
 
 function App() {
   const [preview, setPreview] = useState({});
@@ -78,35 +80,20 @@ function App() {
 
   return (
     <div>
-      <Header logo={logo} />
-      <main className="main-app">
-        <CardPreview setDataCard={setDataCard} dataCard={dataCard} />
-        <Form
-          updateDataCard={updateDataCard}
-          updatePreview={updatePreview}
-          dataCard={dataCard}
-          preview={preview}
-        />
-      </main>
-      {/* <footer className="footer">
-        <div className="footer__text">
-          <p>
-            Monday haters <small>©2022</small>
-          </p>
-        </div>
-        <div className="footer__logo">
-          <a href="./index.html#">
-            {' '}
-            <img
-              className="footer__logo--img"
-              src={logo}
-              alt="logo"
-              title="logo"
-            />
-          </a>
-        </div>
-      </footer> */}
-      <script src="./assets/js/main.js"></script>
+      <Routes>
+        <Route path="/" element={
+        <>
+          <Header className="header" logo={logoGif}/>
+          <Landing/>
+        </>
+        }/>
+
+        <Route path="/card" element={<Card updateDataCard={updateDataCard} dataCard={dataCard} updatePreview={updatePreview} preview={preview} className="header-app"/>}/>
+
+      </Routes>
+      
+      <Footer/>
+      {/* <script src="./assets/js/main.js"></script> */}
     </div>
   );
 }
