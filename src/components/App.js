@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import "../styles/App.scss";
 import { useState, useEffect } from "react";
 import ls from "../services/localStorage";
@@ -8,6 +9,18 @@ import logoGif from "../images/logo.gif";
 import Card from "./Card";
 import Landing from "./Landing";
 import Footer from "./Footer";
+=======
+import '../styles/App.scss';
+import { useState, useEffect } from 'react';
+import ls from '../services/localStorage';
+import { Routes, Route } from 'react-router-dom';
+import Header from './Header';
+import logoGif from '../images/logo.gif';
+
+import Card from './Card';
+import Landing from './Landing';
+import Footer from './Footer';
+>>>>>>> f82eccb61f6deec038e4fd83fe7e912e1f450329
 
 function App() {
   const [preview, setPreview] = useState({});
@@ -95,7 +108,11 @@ function App() {
           path="/"
           element={
             <>
+<<<<<<< HEAD
               <Header className="header" logo={logoGif} />
+=======
+              <Header className="header" logo={logoGif} cImg="header__logo" />
+>>>>>>> f82eccb61f6deec038e4fd83fe7e912e1f450329
               <Landing />
             </>
           }
@@ -109,8 +126,13 @@ function App() {
               dataCard={dataCard}
               updatePreview={updatePreview}
               preview={preview}
+<<<<<<< HEAD
               resetDataCard={resetDataCard}
               className="header-app"
+=======
+              className="header-app"
+              cImg="header-app__logo"
+>>>>>>> f82eccb61f6deec038e4fd83fe7e912e1f450329
             />
           }
         />
