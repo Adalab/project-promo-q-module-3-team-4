@@ -1,14 +1,13 @@
-import '../styles/App.scss';
-import { useState, useEffect } from 'react';
-import ls from '../services/localStorage';
-import {Routes, Route, Link} from 'react-router-dom';
-import Header from './Header';
-import logoGif from '../images/logo.gif';
+import "../styles/App.scss";
+import { useState, useEffect } from "react";
+import ls from "../services/localStorage";
+import { Routes, Route, Link } from "react-router-dom";
+import Header from "./Header";
+import logoGif from "../images/logo.gif";
 
-
-import Card from './Card';
-import Landing from './Landing';
-import Footer from './Footer';
+import Card from "./Card";
+import Landing from "./Landing";
+import Footer from "./Footer";
 
 function App() {
   const [preview, setPreview] = useState({});
@@ -38,27 +37,38 @@ function App() {
   // // });
 
   const [dataCard, setDataCard] = useState(
-    ls.get('dataLS', {
-      palette: '1',
-      name: '',
-      job: '',
-      phone: '',
-      email: '',
-      linkedin: '',
-      github: '',
-      photo: 'images/default.png',
+    ls.get("dataLS", {
+      palette: "1",
+      name: "",
+      job: "",
+      phone: "",
+      email: "",
+      linkedin: "",
+      github: "",
+      photo: "images/default.png",
     })
   );
   const updateDataCard = (inputName, inputValue) => {
     setDataCard({ ...dataCard, [inputName]: inputValue });
   };
-
+  const resetDataCard = () => {
+    setDataCard({
+      palette: "1",
+      name: "",
+      job: "",
+      phone: "",
+      email: "",
+      linkedin: "",
+      github: "",
+      photo: "images/default.png",
+    });
+  };
   const updatePreview = (apiResponse) => {
     setPreview(apiResponse);
   };
 
   useEffect(() => {
-    ls.set('dataLS', dataCard);
+    ls.set("dataLS", dataCard);
   }, [dataCard]);
 
   // const handleClickCollapsed = (ev) => {
@@ -81,18 +91,32 @@ function App() {
   return (
     <div>
       <Routes>
-        <Route path="/" element={
-        <>
-          <Header className="header" logo={logoGif}/>
-          <Landing/>
-        </>
-        }/>
+        <Route
+          path="/"
+          element={
+            <>
+              <Header className="header" logo={logoGif} />
+              <Landing />
+            </>
+          }
+        />
 
-        <Route path="/card" element={<Card updateDataCard={updateDataCard} dataCard={dataCard} updatePreview={updatePreview} preview={preview} className="header-app"/>}/>
-
+        <Route
+          path="/card"
+          element={
+            <Card
+              updateDataCard={updateDataCard}
+              dataCard={dataCard}
+              updatePreview={updatePreview}
+              preview={preview}
+              resetDataCard={resetDataCard}
+              className="header-app"
+            />
+          }
+        />
       </Routes>
-      
-      <Footer/>
+
+      <Footer />
       {/* <script src="./assets/js/main.js"></script> */}
     </div>
   );

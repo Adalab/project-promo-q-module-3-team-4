@@ -1,8 +1,7 @@
-import Design from './Design';
-import sendToApi from '../services/api';
-import Fill from './Fill';
-import Share from './Share';
-
+import Design from "./Design";
+import sendToApi from "../services/api";
+import Fill from "./Fill";
+import Share from "./Share";
 
 const Form = (props) => {
   const handleCreateCard = (ev) => {
@@ -17,7 +16,7 @@ const Form = (props) => {
 
     props.updateDataCard(inputName, inputValue);
 
-    if (inputName === 'photo') {
+    if (inputName === "photo") {
       const file = ev.currentTarget.files[0];
       const reader = new FileReader();
       reader.readAsDataURL(file);
@@ -28,18 +27,17 @@ const Form = (props) => {
     }
   };
 
-  const 
-
-
   return (
     <form action="" className="form-container js_all_inputs">
       <Design handleInput={handleInput} dataCard={props.dataCard} />
 
-      <Fill handleInput={handleInput} dataCard={props.dataCard}/>
+      <Fill handleInput={handleInput} dataCard={props.dataCard} />
 
-      <Share handleCreateCard={handleCreateCard} dataCard={props.dataCard} preview={props.preview}/>
-
-    
+      <Share
+        handleCreateCard={handleCreateCard}
+        dataCard={props.dataCard}
+        preview={props.preview}
+      />
     </form>
   );
 };
