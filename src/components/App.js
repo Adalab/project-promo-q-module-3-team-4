@@ -1,13 +1,13 @@
-import '../styles/App.scss';
-import { useState, useEffect } from 'react';
-import ls from '../services/localStorage';
-import { Routes, Route } from 'react-router-dom';
-import Header from './Header';
-import logoGif from '../images/logo.gif';
+import "../styles/App.scss";
+import { useState, useEffect } from "react";
+import ls from "../services/localStorage";
+import { Routes, Route } from "react-router-dom";
+import Header from "./Header";
+import logoGif from "../images/logo.gif";
 
-import Card from './Card';
-import Landing from './Landing';
-import Footer from './Footer';
+import Card from "./Card";
+import Landing from "./Landing";
+import Footer from "./Footer";
 
 function App() {
   const [preview, setPreview] = useState({});
@@ -37,15 +37,15 @@ function App() {
   // // });
 
   const [dataCard, setDataCard] = useState(
-    ls.get('dataLS', {
-      palette: '1',
-      name: '',
-      job: '',
-      phone: '',
-      email: '',
-      linkedin: '',
-      github: '',
-      photo: 'images/default.png',
+    ls.get("dataLS", {
+      palette: "1",
+      name: "",
+      job: "",
+      phone: "",
+      email: "",
+      linkedin: "",
+      github: "",
+      photo: "images/default.png",
     })
   );
   const updateDataCard = (inputName, inputValue) => {
@@ -53,14 +53,14 @@ function App() {
   };
   const resetDataCard = () => {
     setDataCard({
-      palette: '1',
-      name: '',
-      job: '',
-      phone: '',
-      email: '',
-      linkedin: '',
-      github: '',
-      photo: 'images/default.png',
+      palette: "1",
+      name: "",
+      job: "",
+      phone: "",
+      email: "",
+      linkedin: "",
+      github: "",
+      photo: "images/default.png",
     });
   };
   const updatePreview = (apiResponse) => {
@@ -68,7 +68,7 @@ function App() {
   };
 
   useEffect(() => {
-    ls.set('dataLS', dataCard);
+    ls.set("dataLS", dataCard);
   }, [dataCard]);
 
   // const handleClickCollapsed = (ev) => {
@@ -118,8 +118,8 @@ function App() {
         />
       </Routes>
 
-      <Footer />
-      {/* <script src="./assets/js/main.js"></script> */}
+      {/* <Footer />
+      <script src="./assets/js/main.js"></script> */}
     </div>
   );
 }
