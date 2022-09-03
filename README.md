@@ -36,3 +36,5 @@ Comprobar que los datos recibidos desde el navegador son correctos; en caso de q
 • Devolver una respuesta al navegador con esta URL.
 • Visualizar una tarjeta existente a través del motor de plantillas
 • Cada vez que se crea una tarjeta desde la web, el servidor asocia una URL a cada tarjeta. Cuando se accede a esta URL el servidor debe mostrar una página con los datos de la tarjeta: datos y foto, y colores de la tarjeta.
+
+En el presente repositorio se ha trabajado la priemra parte, y en este, la segunda: project-promo-q-module-4-team-4
