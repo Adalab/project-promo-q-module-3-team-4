@@ -19,6 +19,10 @@ const Card = (props) => {
           updatePreview={props.updatePreview}
           dataCard={props.dataCard}
           preview={props.preview}
+          designCollapsed={props.designCollapsed}
+          fillCollapsed={props.fillCollapsed}
+          shareCollapsed={props.shareCollapsed}
+          handleCollapsables={props.handleCollapsables}
         />
       </main>
     </>

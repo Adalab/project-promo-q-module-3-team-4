@@ -1,18 +1,23 @@
-import GetAvatar from "./GetAvatar";
+import GetAvatar from './GetAvatar';
 
 const Fill = (props) => {
   return (
     <fieldset>
       <section
+        id="fill"
         className="section-form js_header_data"
-        // onClick={handleClickCollapsed}
+        onClick={props.handleCollapsables}
       >
         <h2 className="section-form-title">
           <i className="fa-solid fa-keyboard"></i>rellena
         </h2>
-        <i className="fa-solid fa-angle-up rotate js_angle_data"></i>
+        <i
+          className={`fa-solid fa-angle-up js_angle_data ${props.fillCollapsed.rotate}`}
+        ></i>
       </section>
-      <section className="data-input-section js_content_data">
+      <section
+        className={`data-input-section js_content_data ${props.fillCollapsed.collapsed}`}
+      >
         {/* Se ha quitado la clase collapsed */}
         <label htmlFor="name" className="data-label">
           Nombre completo
