@@ -1,6 +1,8 @@
+@import "../core/_variables.scss";
+
 .section-preview {
   padding: 38px 35px 40px 45px;
-  background-image: linear-gradient(to bottom, $blue, $color_pink);
+  background-image: linear-gradient(to bottom, $color_blue, $color_pink);
   display: flex;
   flex-direction: column;
   align-items: center;

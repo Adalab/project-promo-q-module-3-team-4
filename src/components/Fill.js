@@ -1,4 +1,5 @@
 import GetAvatar from "./GetAvatar";
+import "../styles/layout/_app_data.scss";
 
 const Fill = (props) => {
   return (

@@ -1,3 +1,5 @@
+import "../styles/layout/_app_preview.scss";
+
 const CardPreview = (props) => {
   const handleReset = (ev) => {
     ev.preventDefault();

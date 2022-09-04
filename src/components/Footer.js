@@ -1,5 +1,5 @@
-import logo from '../images/logo-footer.jpg';
-
+import logo from "../images/logo-footer.jpg";
+import "../styles/layout/_footer.scss";
 const Footer = () => {
   return (
     <footer className="footer">
@@ -10,7 +10,7 @@ const Footer = () => {
       </div>
       <div className="footer__logo">
         <a href="./index.html#">
-          {' '}
+          {" "}
           <img
             className="footer__logo--img"
             src={logo}
