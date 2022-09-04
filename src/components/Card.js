@@ -2,7 +2,7 @@ import Header from "./Header";
 import CardPreview from "./CardPreview";
 import logo from "../images/logo.jpg";
 import Form from "./Form";
-import "../styles/layout/_app.scss";
+import "../styles/layout/Card.scss";
 
 const Card = (props) => {
   return (

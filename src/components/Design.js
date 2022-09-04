@@ -1,27 +1,24 @@
-import "../styles/layout/_app_design.scss";
+import "../styles/layout/Design.scss";
 const Design = (props) => {
   return (
     <fieldset>
-      <section
-        className="section-form js_header_design"
-        onClick={props.handleCollapsables}
-      >
+      <section className="section-form " onClick={props.handleCollapsables}>
         <h2 className="section-form-title">
           <i className="fa-solid fa-object-ungroup"></i>diseña
         </h2>
-        <i className="fa-solid fa-angle-up rotate js_angle_design"></i>
+        <i className="fa-solid fa-angle-up rotate "></i>
       </section>
 
-      <section className={`design-colors js_content_design`}>
+      <section className={`design-colors `}>
         {/* Se ha quitado la clase collapsed */}
         <h3 className="colors-title">colores</h3>
-        <div className="select-colors js_palette">
+        <div className="select-colors ">
           <label htmlFor="color-box1" className="color-box-label">
             <input
               type="radio"
               name="palette"
               id="color-box1"
-              className="color-box-input js_palette1"
+              className="color-box-input "
               value="1"
               onChange={props.handleInput}
               checked={props.dataCard.palette === "1"}
@@ -35,7 +32,7 @@ const Design = (props) => {
               type="radio"
               name="palette"
               id="color-box2"
-              className="color-box-input js_palette2"
+              className="color-box-input "
               value="2"
               onChange={props.handleInput}
               checked={props.dataCard.palette === "2"}
@@ -49,7 +46,7 @@ const Design = (props) => {
               type="radio"
               name="palette"
               id="color-box3"
-              className="color-box-input js_palette3"
+              className="color-box-input "
               value="3"
               onChange={props.handleInput}
               checked={props.dataCard.palette === "3"}
@@ -63,7 +60,7 @@ const Design = (props) => {
               type="radio"
               name="palette"
               id="color-box4"
-              className="color-box-input js_palette4"
+              className="color-box-input "
               value="4"
               onChange={props.handleInput}
               checked={props.dataCard.palette === "4"}
@@ -77,7 +74,7 @@ const Design = (props) => {
               type="radio"
               name="palette"
               id="color-box5"
-              className="color-box-input js_palette5"
+              className="color-box-input"
               value="5"
               onChange={props.handleInput}
               checked={props.dataCard.palette === "5"}
