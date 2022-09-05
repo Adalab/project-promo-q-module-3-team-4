@@ -27,7 +27,6 @@ const CardPreview = (props) => {
           className="preview-img "
           style={{ backgroundImage: `url(${props.dataCard.photo})` }}
         >
-          {/* <img src={imageUrl} alt="" /> */}
         </div>
         <div className="preview-icon-contact">
           <a

@@ -3,11 +3,7 @@ import sendToApi from '../services/api';
 import Fill from './Fill';
 import Share from './Share';
 
-// import { useState } from 'react';
-
 const Form = (props) => {
-  // const [isCollapsed, setIsCollapsed] = useState(true);
-  // const [classCollapsed, setClassCollapsed] = useState('');
 
   const handleCreateCard = (ev) => {
     ev.preventDefault();
@@ -20,20 +16,7 @@ const Form = (props) => {
     const inputValue = ev.currentTarget.value;
 
     props.updateDataCard(inputName, inputValue);
-
-    // if (inputName === "photo") {
-    //   const file = ev.currentTarget.files[0];
-    //   const reader = new FileReader();
-    //   reader.readAsDataURL(file);
-    //   reader.onload = function (event) {
-    //     const content = event.target.result;
-    //     props.updateDataCard(inputName, content);
-    //   };
   };
-
-  // const handleCollapsables = () => {
-
-  // }
 
   return (
     <form action="" className="form-container js_all_inputs">
@@ -62,4 +45,5 @@ const Form = (props) => {
     </form>
   );
 };
+
 export default Form;

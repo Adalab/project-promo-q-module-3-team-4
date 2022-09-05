@@ -18,7 +18,6 @@ const Design = (props) => {
       <section
         className={`design-colors js_content_design ${props.designCollapsed.collapsed}`}
       >
-        {/* Se ha quitado la clase collapsed */}
         <h3 className="colors-title">colores</h3>
         <div className="select-colors js_palette">
           <label htmlFor="color-box1" className="color-box-label">

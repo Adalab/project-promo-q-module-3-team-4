@@ -12,30 +12,6 @@ import Footer from './Footer';
 function App() {
   const [preview, setPreview] = useState({});
 
-  // const [validationText, setValidationText] = useState('');
-
-  // const validateResponse = () => {
-  //   if (preview.success) {
-  //     setValidationText('La tarjeta ha sido creada');
-  //   } else {
-  //     setValidationText
-  //   }
-  // }
-
-  // const [classCollapsed, setClassCollapsed] = useState('collapsed');
-
-  // const [dataCard, setDataCard] = useState(ls.get('dataLS', {}));
-  // // const [dataCard, setDataCard] = useState({
-  // //   palette: "1",
-  // //   name: "",
-  // //   job: "",
-  // //   phone: "",
-  // //   email: "",
-  // //   linkedin: "",
-  // //   github: "",
-  // //   photo: "../images/default.png"
-  // // });
-
   const [dataCard, setDataCard] = useState(
     ls.get('dataLS', {
       palette: '1',
@@ -155,22 +131,6 @@ function App() {
     }
   };
 
-  // const handleClickCollapsed = (ev) => {
-  //   // if (classCollapsed === 'collapsed') {
-  //   //   setClassCollapsed('');
-  //   // } else {
-  //   //   setClassCollapsed('collapsed');
-  //   // }
-  //   classCollapsed === 'collapsed'
-  //     ? setClassCollapsed('')
-  //     : setClassCollapsed('collapsed');
-  // };
-
-  // useEffect(() => {
-  //   sendToApi(dataCard).then((response) => {
-  //     setPreview(response);
-  //   });
-  // }, [dataCard]);
 
   return (
     <div>
@@ -206,8 +166,8 @@ function App() {
         />
       </Routes>
 
-      {/* <Footer />
-      <script src="./assets/js/main.js"></script> */}
+      <Footer />
+      <script src="./assets/js/main.js"></script>
     </div>
   );
 }

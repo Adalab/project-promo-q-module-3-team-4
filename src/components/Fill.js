@@ -19,7 +19,6 @@ const Fill = (props) => {
       <section
         className={`data-input-section js_content_data ${props.fillCollapsed.collapsed}`}
       >
-        {/* Se ha quitado la clase collapsed */}
         <label htmlFor="name" className="data-label">
           Nombre completo
           <input

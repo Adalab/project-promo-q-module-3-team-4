@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import "../styles/layout/Main.scss";
+
+
 const Landing = () => {
   return (
     <main className="main">

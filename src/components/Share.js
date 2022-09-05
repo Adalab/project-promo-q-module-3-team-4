@@ -17,7 +17,6 @@ const Share = (props) => {
       <div
         className={`create_button js_content_share ${props.shareCollapsed.collapsed}`}
       >
-        {/* Se ha quitado la clase collapsed */}
         <button
           className="submit_button js_submit_button"
           type="submit"
