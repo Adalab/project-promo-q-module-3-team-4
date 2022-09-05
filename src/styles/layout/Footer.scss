@@ -1,3 +1,5 @@
+@import "../core/_variables.scss";
+
 .footer {
   display: flex;
   flex-direction: column;
@@ -8,11 +10,13 @@
   font-family: $font_main;
   padding-bottom: 20px;
   min-height: 10vh;
+
   @media all and (min-width: 768px) {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
   }
+
   &__text {
     font-size: 1.6rem;
     line-height: 20px;
@@ -21,22 +25,26 @@
     width: 62%;
     padding: 10px;
     text-transform: capitalize;
+
     @media all and (min-width: 768px) {
       padding: 18px 0 22px 41px;
       font-size: 2rem;
       text-align: left;
     }
   }
+
   &__logo {
     padding-bottom: 10px;
+
     @media all and (min-width: 768px) {
       padding: 0px 40px 10px;
-      
+
     }
+
     &--img {
       width: 220px;
       height: 90px;
-      
+
     }
   }
 }

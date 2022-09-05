@@ -1,3 +1,4 @@
+@import "../core/_variables.scss";
 /*SECCIÓN DEL TÍTULO*/
 
 .data {
@@ -34,6 +35,7 @@
   @media all and (min-width: 768px) {
     max-width: 329px;
   }
+
   @media all and (min-width: 1024px) {
     gap: 10px;
     margin: 15px 30px;
@@ -53,6 +55,7 @@
     border: 2px $color_pink solid;
     height: 30px;
     border-radius: 15px;
+
     @media all and (min-width: 1024px) {
       height: 25px;
     }
@@ -81,6 +84,7 @@
       display: none;
     }
   }
+
   & .image_preview {
     width: 30px;
     height: 30px;

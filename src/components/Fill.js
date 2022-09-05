@@ -1,19 +1,20 @@
 import GetAvatar from "./GetAvatar";
+import "../styles/layout/Fill.scss";
 
 
 const Fill = (props) => {
   return (
     <fieldset>
       <section
-        className="section-form js_header_data"
+        className="section-form "
         // onClick={handleClickCollapsed}
       >
         <h2 className="section-form-title">
           <i className="fa-solid fa-keyboard"></i>rellena
         </h2>
-        <i className="fa-solid fa-angle-up rotate js_angle_data"></i>
+        <i className="fa-solid fa-angle-up rotate "></i>
       </section>
-      <section className="data-input-section js_content_data">
+      <section className="data-input-section ">
         {/* Se ha quitado la clase collapsed */}
         <label htmlFor="name" className="data-label">
           Nombre completo
@@ -21,7 +22,7 @@ const Fill = (props) => {
             type="text"
             name="name"
             id="name"
-            className="data-input js_name_input"
+            className="data-input "
             placeholder="Ej: Sally Jill"
             onChange={props.handleInput}
             value={props.dataCard.name}
@@ -33,7 +34,7 @@ const Fill = (props) => {
             type="text"
             name="job"
             id="job"
-            className="data-input js_job_input"
+            className="data-input "
             placeholder="Ej: Front-end unicorn"
             onChange={props.handleInput}
             value={props.dataCard.job}
@@ -51,7 +52,7 @@ const Fill = (props) => {
 
 
             <div
-              className="image_preview js__profile-image"
+              className="image_preview "
               style={{ backgroundImage: `url(${props.dataCard.photo})` }}
             ></div>
           </div>
@@ -63,7 +64,7 @@ const Fill = (props) => {
             type="email"
             name="email"
             id="email"
-            className="data-input js_email_input"
+            className="data-input "
             placeholder="Ej: Sally-hill@gmail.com"
             onChange={props.handleInput}
             value={props.dataCard.email}
@@ -75,7 +76,7 @@ const Fill = (props) => {
             type="phone"
             name="phone"
             id="phone"
-            className="data-input js_phone_input"
+            className="data-input "
             placeholder="Ej: 555-55-55-55"
             pattern="[0-9]{9}"
             onChange={props.handleInput}
@@ -88,7 +89,7 @@ const Fill = (props) => {
             type="text"
             name="linkedin"
             id="linkedin"
-            className="data-input js_linkedin_input"
+            className="data-input "
             placeholder="Ej: linkedin.com/in/sally.hill"
             onChange={props.handleInput}
             value={props.dataCard.linkedin}
@@ -100,7 +101,7 @@ const Fill = (props) => {
             type="text"
             name="github"
             id="github"
-            className="data-input js_github_input"
+            className="data-input "
             placeholder="Ej:@sally-hill"
             onChange={props.handleInput}
             value={props.dataCard.github}

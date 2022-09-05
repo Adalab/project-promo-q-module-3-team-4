@@ -1,5 +1,8 @@
+@import "../core/_variables.scss";
+
 .main-app {
   min-height: 80vh;
+
   @media all and (min-width: 768px) {
     background-color: $background_primary;
     display: grid;
@@ -7,6 +10,7 @@
     grid-template-rows: 1fr;
     height: 76vh;
   }
+
   @media all and (min-width: 1024px) {
     grid-template-columns: 0.75fr 1.25fr;
   }
