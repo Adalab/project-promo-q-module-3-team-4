@@ -21,15 +21,15 @@ const Form = (props) => {
 
     props.updateDataCard(inputName, inputValue);
 
-    if (inputName === "photo") {
-      const file = ev.currentTarget.files[0];
-      const reader = new FileReader();
-      reader.readAsDataURL(file);
-      reader.onload = function (event) {
-        const content = event.target.result;
-        props.updateDataCard(inputName, content);
-      };
-    }
+    // if (inputName === "photo") {
+    //   const file = ev.currentTarget.files[0];
+    //   const reader = new FileReader();
+    //   reader.readAsDataURL(file);
+    //   reader.onload = function (event) {
+    //     const content = event.target.result;
+    //     props.updateDataCard(inputName, content);
+    //   };
+    
   };
 
   // const handleCollapsables = () => {
@@ -43,7 +43,7 @@ const Form = (props) => {
       <Fill
         handleInput={handleInput}
         dataCard={props.dataCard}
-        updateDataCard={props.updateDataCard}
+        updateDataCard={ props.updateDataCard}
       />
 
       <Share

@@ -1,5 +1,6 @@
 import GetAvatar from "./GetAvatar";
 
+
 const Fill = (props) => {
   return (
     <fieldset>
@@ -38,13 +39,17 @@ const Fill = (props) => {
             value={props.dataCard.job}
           />
         </label>
-        <label htmlFor="profile-pic" className="data-label">
+        <label className="data-label">
           Imagen de perfil
           <div className="image-input-div">
+
+
             <GetAvatar
               avatar={props.dataCard.photo}
               updateDataCard={props.updateDataCard}
             />
+
+
             <div
               className="image_preview js__profile-image"
               style={{ backgroundImage: `url(${props.dataCard.photo})` }}
