@@ -1,20 +1,24 @@
-import GetAvatar from "./GetAvatar";
-import "../styles/layout/Fill.scss";
-
+import GetAvatar from './GetAvatar';
+import '../styles/layout/Fill.scss';
 
 const Fill = (props) => {
   return (
     <fieldset>
       <section
-        className="section-form "
-        // onClick={handleClickCollapsed}
+        id="fill"
+        className="section-form js_header_data"
+        onClick={props.handleCollapsables}
       >
         <h2 className="section-form-title">
           <i className="fa-solid fa-keyboard"></i>rellena
         </h2>
-        <i className="fa-solid fa-angle-up rotate "></i>
+        <i
+          className={`fa-solid fa-angle-up js_angle_data ${props.fillCollapsed.rotate}`}
+        ></i>
       </section>
-      <section className="data-input-section ">
+      <section
+        className={`data-input-section js_content_data ${props.fillCollapsed.collapsed}`}
+      >
         {/* Se ha quitado la clase collapsed */}
         <label htmlFor="name" className="data-label">
           Nombre completo
@@ -43,13 +47,10 @@ const Fill = (props) => {
         <label className="data-label">
           Imagen de perfil
           <div className="image-input-div">
-
-
             <GetAvatar
               avatar={props.dataCard.photo}
               updateDataCard={props.updateDataCard}
             />
-
 
             <div
               className="image_preview "

@@ -1,27 +1,35 @@
-import "../styles/layout/Design.scss";
+import '../styles/layout/Design.scss';
 const Design = (props) => {
   return (
     <fieldset>
-      <section className="section-form " onClick={props.handleCollapsables}>
+      <section
+        id="design"
+        className="section-form js_header_design"
+        onClick={props.handleCollapsables}
+      >
         <h2 className="section-form-title">
           <i className="fa-solid fa-object-ungroup"></i>diseña
         </h2>
-        <i className="fa-solid fa-angle-up rotate "></i>
+        <i
+          className={`fa-solid fa-angle-up js_angle_design ${props.designCollapsed.rotate}`}
+        ></i>
       </section>
 
-      <section className={`design-colors `}>
+      <section
+        className={`design-colors js_content_design ${props.designCollapsed.collapsed}`}
+      >
         {/* Se ha quitado la clase collapsed */}
         <h3 className="colors-title">colores</h3>
-        <div className="select-colors ">
+        <div className="select-colors js_palette">
           <label htmlFor="color-box1" className="color-box-label">
             <input
               type="radio"
               name="palette"
               id="color-box1"
-              className="color-box-input "
+              className="color-box-input js_palette1"
               value="1"
               onChange={props.handleInput}
-              checked={props.dataCard.palette === "1"}
+              checked={props.dataCard.palette === '1'}
             />
             <div className="color-div one"></div>
             <div className="color-div two"></div>
@@ -32,10 +40,10 @@ const Design = (props) => {
               type="radio"
               name="palette"
               id="color-box2"
-              className="color-box-input "
+              className="color-box-input js_palette2"
               value="2"
               onChange={props.handleInput}
-              checked={props.dataCard.palette === "2"}
+              checked={props.dataCard.palette === '2'}
             />
             <div className="color-div four"></div>
             <div className="color-div five"></div>
@@ -46,10 +54,10 @@ const Design = (props) => {
               type="radio"
               name="palette"
               id="color-box3"
-              className="color-box-input "
+              className="color-box-input js_palette3"
               value="3"
               onChange={props.handleInput}
-              checked={props.dataCard.palette === "3"}
+              checked={props.dataCard.palette === '3'}
             />
             <div className="color-div seven"></div>
             <div className="color-div eight"></div>
@@ -60,10 +68,10 @@ const Design = (props) => {
               type="radio"
               name="palette"
               id="color-box4"
-              className="color-box-input "
+              className="color-box-input js_palette4"
               value="4"
               onChange={props.handleInput}
-              checked={props.dataCard.palette === "4"}
+              checked={props.dataCard.palette === '4'}
             />
             <div className="color-div ten"></div>
             <div className="color-div eleven"></div>
@@ -74,10 +82,10 @@ const Design = (props) => {
               type="radio"
               name="palette"
               id="color-box5"
-              className="color-box-input"
+              className="color-box-input js_palette5"
               value="5"
               onChange={props.handleInput}
-              checked={props.dataCard.palette === "5"}
+              checked={props.dataCard.palette === '5'}
             />
             <div className="color-div thirteen"></div>
             <div className="color-div fourteen"></div>

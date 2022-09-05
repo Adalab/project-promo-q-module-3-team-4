@@ -1,14 +1,22 @@
-import "../styles/layout/Share.scss";
+import '../styles/layout/Share.scss';
 const Share = (props) => {
   return (
     <fieldset>
-      <section className="section-form js_header_share">
+      <section
+        id="share"
+        className="section-form js_header_share"
+        onClick={props.handleCollapsables}
+      >
         <h2 className="section-form-title">
           <i className="fa-solid fa-share-nodes"></i>comparte
         </h2>
-        <i className="fa-solid fa-angle-up rotate js_angle_share"></i>
+        <i
+          className={`fa-solid fa-angle-up js_angle_share ${props.shareCollapsed.rotate}`}
+        ></i>
       </section>
-      <div className="create_button js_content_share">
+      <div
+        className={`create_button js_content_share ${props.shareCollapsed.collapsed}`}
+      >
         {/* Se ha quitado la clase collapsed */}
         <button
           className="submit_button js_submit_button"
